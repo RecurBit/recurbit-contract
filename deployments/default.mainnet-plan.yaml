@@ -1,0 +1,25 @@
+---
+id: 0
+name: Mainnet deployment
+network: mainnet
+stacks-node: "https://api.hiro.so"
+bitcoin-node: "http://blockstack:blockstacksystem@bitcoin.blockstack.com:8332"
+plan:
+  batches:
+    - id: 0
+      transactions:
+        - contract-publish:
+            contract-name: mock-btc
+            expected-sender: SP1GNDB8SXJ51GBMSVVXMWGTPRFHGSMWNNBEY25A4
+            cost: 9603511
+            path: contracts/mock-btc.clar
+            anchor-block-only: true
+            clarity-version: 2
+        - contract-publish:
+            contract-name: recurbit
+            expected-sender: SP1GNDB8SXJ51GBMSVVXMWGTPRFHGSMWNNBEY25A4
+            cost: 5173849
+            path: contracts/recurbit.clar
+            anchor-block-only: true
+            clarity-version: 2
+      epoch: "2.5"
